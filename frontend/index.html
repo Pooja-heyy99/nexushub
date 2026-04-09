@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusHub - AI-Powered Tech Club Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">NexusHub</span>
+            </div>
+            <div class="nav-right">
+                <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="navLoginBtn" class="nav-btn">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <section id="landingPage" class="landing-page">
+        <div class="landing-container">
+            <div class="hero">
+                <h1 class="hero-title">Welcome to <span class="gradient-text">NexusHub</span></h1>
+                <p class="hero-subtitle">Your AI-Powered College Tech Club Platform</p>
+                <p class="hero-description">
+                    Connect with teammates, solve challenges, get AI mentorship, and grow as a developer
+                </p>
+                
+                <div class="cta-buttons">
+                    <button id="getStartedBtn" class="btn btn-primary">Get Started</button>
+                    <button id="learnMoreBtn" class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Mentor</h3>
+                    <p>Personalized guidance and recommendations powered by advanced AI</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Challenges</h3>
+                    <p>Curated challenges matching your skill level and interests</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Team Matching</h3>
+                    <p>Find the perfect teammates with complementary skills</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Growth Tracking</h3>
+                    <p>Monitor your progress with detailed analytics and insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <!-- Login Form -->
+            <div id="loginForm" class="form-container">
+                <h2>Welcome Back</h2>
+                <form id="loginSubmit">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Sign In</button>
+                </form>
+                <p class="toggle-text">Don't have an account? <button type="button" id="toSignup" class="link-btn">Sign Up</button></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" class="form-container hidden">
+                <h2>Create Account</h2>
+                <form id="signupSubmit">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Create Account</button>
+                </form>
+                <p class="toggle-text">Already have an account? <button type="button" id="toLogin" class="link-btn">Sign In</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard hidden">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <img id="userAvatar" src="" alt="User Avatar" class="avatar">
+                    <div class="user-info">
+                        <div id="userName" class="user-name">User</div>
+                        <div id="userRank" class="user-rank">Beginner</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-page="overview">
+                    <span class="nav-icon">📊</span> Overview
+                </button>
+                <button class="nav-item" data-page="challenges">
+                    <span class="nav-icon">🎯</span> Challenges
+                </button>
+                <button class="nav-item" data-page="team">
+                    <span class="nav-icon">👥</span> Team
+                </button>
+                <button class="nav-item" data-page="ai-mentor">
+                    <span class="nav-icon">🤖</span> AI Mentor
+                </button>
+                <button class="nav-item" data-page="badges">
+                    <span class="nav-icon">🏅</span> Badges
+                </button>
+                <button class="nav-item" data-page="events">
+                    <span class="nav-icon">📅</span> Events
+                </button>
+                <button class="nav-item" data-page="resources">
+                    <span class="nav-icon">📚</span> Resources
+                </button>
+                <button class="nav-item" data-page="discussions">
+                    <span class="nav-icon">💬</span> Discussions
+                </button>
+                <button class="nav-item" data-page="leaderboard">
+                    <span class="nav-icon">🏆</span> Leaderboard
+                </button>
+                <button class="nav-item" data-page="profile">
+                    <span class="nav-icon">⚙️</span> Profile
+                </button>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <h1 id="pageTitle">Overview</h1>
+                <div class="header-right">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search challenges, teammates...">
+                    <div class="notifications">
+                        <button class="notification-btn">🔔</button>
+                        <div id="notificationList" class="notification-dropdown hidden"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Overview Page -->
+                <div id="overviewPage" class="page-section active">
+                    <div class="dashboard-grid">
+                        <!-- Stats -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="userPoints">0</div>
+                                <div class="stat-label">Points</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="challengesCompleted">0</div>
+                                <div class="stat-label">Challenges</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="userActivity">0</div>
+                                <div class="stat-label">Activity</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="userTeam">-</div>
+                                <div class="stat-label">Team</div>
+                            </div>
+                        </div>
+
+                        <!-- AI Mentor Card -->
+                        <div class="card ai-mentor-card">
+                            <h2>🤖 AI Mentor Insights</h2>
+                            <div id="aiMentorContent" class="ai-content">
+                                <div class="skeleton-loader"></div>
+                            </div>
+                            <button id="refreshAIBtn" class="btn btn-small">Refresh</button>
+                        </div>
+
+                        <!-- Recent Challenges -->
+                        <div class="card">
+                            <h2>Recent Challenges</h2>
+                            <div id="recentChallengesContainer" class="challenges-list">
+                                <div class="skeleton-loader"></div>
+                            </div>
+                        </div>
+
+                        <!-- Growth Timeline -->
+                        <div class="card">
+                            <h2>📈 Growth Timeline</h2>
+                            <div id="growthTimeline" class="timeline">
+                                <div class="skeleton-loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges Page -->
+                <div id="challengesPage" class="page-section">
+                    <div class="challenges-header">
+                        <div class="filter-group">
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="">All Categories</option>
+                                <option value="Web Dev">Web Dev</option>
+                                <option value="ML/AI">ML/AI</option>
+                                <option value="Mobile">Mobile</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Cloud">Cloud</option>
+                            </select>
+                            <select id="difficultyFilter" class="filter-select">
+                                <option value="">All Levels</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="challengesList" class="challenges-grid">
+                        <div class="skeleton-loader"></div>
+                    </div>
+                </div>
+
+                <!-- Team Page -->
+                <div id="teamPage" class="page-section">
+                    <div class="team-container">
+                        <div class="team-section">
+                            <h2>Find Teammates</h2>
+                            <div id="teamMatchesList" class="team-matches-grid">
+                                <div class="skeleton-loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Mentor Page -->
+                <div id="aiMentorPage" class="page-section">
+                    <div class="ai-mentor-container">
+                        <div class="chat-container">
+                            <div id="chatMessages" class="chat-messages">
+                                <div class="chat-message ai-message">
+                                    <p>Hi! I'm your AI Mentor. Ask me anything about your learning journey, challenges, or career growth!</p>
+                                </div>
+                            </div>
+                            <form id="chatForm" class="chat-input-form">
+                                <input type="text" id="chatInput" placeholder="Ask me anything..." required>
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard Page -->
+                <div id="leaderboardPage" class="page-section">
+                    <div class="leaderboard-container">
+                        <table class="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>User</th>
+                                    <th>Points</th>
+                                    <th>Level</th>
+                                    <th>Activity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboardBody">
+                                <tr>
+                                    <td colspan="5" style="text-align: center; padding: 20px;">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Profile Page -->
+                <div id="profilePage" class="page-section">
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <img id="profileAvatar" src="" alt="Profile" class="profile-picture">
+                            <div class="profile-info">
+                                <h2 id="profileName"></h2>
+                                <p id="profileEmail"></p>
+                            </div>
+                        </div>
+
+                        <form id="profileForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="profileBio">Bio</label>
+                                <textarea id="profileBio" placeholder="Tell us about yourself..." rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileSkills">Skills (comma-separated)</label>
+                                <input type="text" id="profileSkills" placeholder="JavaScript, React, Node.js">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Badges Page -->
+                <div id="badgesPage" class="page-section">
+                    <div class="badges-container">
+                        <h2>Your Achievements</h2>
+                        <div id="badgesList" class="badges-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Events Page -->
+                <div id="eventsPage" class="page-section">
+                    <div class="events-container">
+                        <h2>Upcoming Events</h2>
+                        <div class="events-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                            <button class="filter-btn" data-filter="past">Past</button>
+                        </div>
+                        <div id="eventsList" class="events-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Resources Page -->
+                <div id="resourcesPage" class="page-section">
+                    <div class="resources-container">
+                        <h2>Learning Resources</h2>
+                        <div class="resources-filters">
+                            <select id="resourceCategory" class="filter-select">
+                                <option value="">All Categories</option>
+                                <option value="tutorial">Tutorials</option>
+                                <option value="documentation">Documentation</option>
+                                <option value="video">Videos</option>
+                                <option value="article">Articles</option>
+                                <option value="course">Courses</option>
+                            </select>
+                        </div>
+                        <div id="resourcesList" class="resources-list"></div>
+                    </div>
+                </div>
+
+                <!-- Discussions Page -->
+                <div id="discussionsPage" class="page-section">
+                    <div class="discussions-container">
+                        <h2>Community Discussions</h2>
+                        <button id="createDiscussionBtn" class="btn btn-primary">Start Discussion</button>
+                        <div id="discussionsList" class="discussions-list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    <script src="features.js"></script>
+</body>
+</html>
